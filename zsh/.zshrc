@@ -5,6 +5,7 @@ export PATH=$HOME/bin:$HOME/go/bin:/usr/local/bin:$HOME/.local/bin/:$PATH
 export XDG_CONFIG_HOME=~/configs
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/configs/zsh/.oh-my-zsh"
+export EDITOR=nvim
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -108,3 +109,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias tmux='tmux -2u'
 alias k=kubectl
+alias ice-drive-sync-setup='rclone mount IceDrive:/sync ~/sync --vfs-cache-mode full --daemon --allow-non-empty'

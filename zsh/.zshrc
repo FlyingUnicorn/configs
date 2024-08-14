@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=$HOME/bin:$HOME/go/bin:/usr/local/bin:$HOME/.local/bin/:$PATH
+export PATH=$HOME/bin:$HOME/go/bin:/usr/local/bin:$HOME/.local/bin/:/usr/local/go/bin:$PATH
 export XDG_CONFIG_HOME=~/configs
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/configs/zsh/.oh-my-zsh"
@@ -110,3 +110,4 @@ source $ZSH/oh-my-zsh.sh
 alias tmux='tmux -2u'
 alias k=kubectl
 alias ice-drive-sync-setup='rclone mount IceDrive:/sync ~/sync --vfs-cache-mode full --daemon --allow-non-empty'
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)

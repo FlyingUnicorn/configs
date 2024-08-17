@@ -10,22 +10,14 @@ local options = {
     formatters = {
         -- C & C++
         ["clang-format"] = {
-            prepend_args = {
-                "-style={ \
-                        IndentWidth: 4, \
-                        TabWidth: 4, \
-                        UseTab: Never, \
-                        AccessModifierOffset: 0, \
-                        IndentAccessModifiers: true, \
-                        PackConstructorInitializers: Never}",
-            },
+            prepend_args = { "--style=file", "--fallback-style=gnu" },
         },
         -- Golang
         ["goimports-reviser"] = {
             prepend_args = { "-rm-unused" },
         },
         golines = {
-            prepend_args = { "--max-len=80" },
+            prepend_args = { "--max-len=100" },
         },
         -- Lua
         stylua = {

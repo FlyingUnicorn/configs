@@ -6,6 +6,7 @@ export XDG_CONFIG_HOME=~/configs
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/configs/zsh/.oh-my-zsh"
 export EDITOR=nvim
+export LESS=-iMj6FRg
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -61,7 +62,9 @@ ZSH_THEME="fino"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
+HISTSIZE=100000
+SAVEHIST=100000
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -109,5 +112,10 @@ source $ZSH/oh-my-zsh.sh
 
 alias tmux='tmux -2u'
 alias k=kubectl
-alias ice-drive-sync-setup='rclone mount IceDrive:/sync ~/sync --vfs-cache-mode full --daemon --allow-non-empty'
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# Alias - GIT
+alias gits="git status"
+alias gitac="git add -u; git commit --amend --no-edit"
+alias gitc="git checkout"
+alias gitl="git log --graph --abbrev-commit --format=format:'%C(magenta)%h%C(reset) - %C(cyan)%<(21,trunc)%ci%x08%x08%x08%x08%x08 %C(bold cyan)%>(15,trunc)%cr %C(bold blue)%<(30,trunc)%cn %C(bold yellow)%s %C(bold red)%d%C(reset)'"

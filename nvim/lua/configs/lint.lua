@@ -3,6 +3,10 @@ local lint = require("lint")
 lint.linters_by_ft = {
     lua = { "luacheck" },
     python = { "flake8" },
+    javascript = { "eslint_d" },
+    typescript = { "eslint_d" },
+    javascriptreact = { "eslint_d" },
+    typescriptreact = { "eslint_d" },
 }
 
 lint.linters.luacheck.args = {

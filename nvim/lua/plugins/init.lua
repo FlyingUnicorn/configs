@@ -5,6 +5,9 @@ return {
             ensure_installed = {
                 "gopls",
                 "clangd",
+                "typescript-language-server",
+                "eslint-lsp",
+                "prettier",
             },
         },
     },

@@ -10,6 +10,7 @@ lspconfig.servers = {
     "clangd",
     "gopls",
     "pyright",
+    "tsserver",
 }
 
 -- list of servers configured with default config.
@@ -58,6 +59,18 @@ lspconfig.gopls.setup({
             completeUnimported = true,
             usePlaceholders = true,
             staticcheck = true,
+        },
+    },
+})
+
+lspconfig.tsserver.setup({
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+    filetypes = { "js", "ts", "jsx", "tsx" },
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
         },
     },
 })

@@ -5,6 +5,10 @@ local options = {
         cpp = { "clang-format" },
         go = { "gofumpt", "goimports-reviser", "golines" },
         python = { "isort", "black" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
     },
 
     formatters = {
@@ -46,6 +50,7 @@ local options = {
                 "black",
             },
         },
+        prettier = {},
     },
 
     format_on_save = {

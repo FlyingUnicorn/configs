@@ -10,12 +10,12 @@ lspconfig.servers = {
     "clangd",
     "gopls",
     "pyright",
-    "tsserver",
+    "ts_ls",
 }
 
 -- list of servers configured with default config.
 local default_servers = {
-    -- "pyright",
+    "pyright",
 }
 
 -- lsps with default config
@@ -63,7 +63,7 @@ lspconfig.gopls.setup({
     },
 })
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,

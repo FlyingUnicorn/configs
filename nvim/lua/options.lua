@@ -7,4 +7,10 @@ o.shiftwidth = 4
 o.tabstop = 4
 o.softtabstop = 4
 
--- o.cursorlineopt ='both' -- to enable cursorline!
+vim.opt.listchars = {
+    tab = "▸ ",
+    trail = ".",
+    nbsp = "␣",
+}
+
+vim.opt.list = true

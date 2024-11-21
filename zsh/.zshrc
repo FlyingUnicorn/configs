@@ -7,6 +7,9 @@ export XDG_CONFIG_HOME=~/configs
 export ZSH="$HOME/configs/zsh/.oh-my-zsh"
 export EDITOR=nvim
 export LESS=-iMj6FRg
+export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/home/jonas/.local/share/flatpak/exports/share
+
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -119,3 +122,7 @@ alias gits="git status"
 alias gitac="git add -u; git commit --amend --no-edit"
 alias gitc="git checkout"
 alias gitl="git log --graph --abbrev-commit --format=format:'%C(magenta)%h%C(reset) - %C(cyan)%<(21,trunc)%ci%x08%x08%x08%x08%x08 %C(bold cyan)%>(15,trunc)%cr %C(bold blue)%<(30,trunc)%cn %C(bold yellow)%s %C(bold red)%d%C(reset)'"
+
+
+alias todawn="cd ~/projects/sunshine-dawn"
+alias todusk="cd ~/projects/sunshine3"

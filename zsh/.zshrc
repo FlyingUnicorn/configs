@@ -66,8 +66,8 @@ ZSH_THEME="fino"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -112,17 +112,34 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#PROMPT="\[\033[38;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(parse_git_branch)\[\033[01;34m\] $\[\033[00m\]"
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+}
+
+COLOR_DEF=$'%f'
+COLOR_USR=$'%F{243}'
+COLOR_DIR=$'%F{197}'
+COLOR_TDEPTH=$'%F{100}'
+COLOR_GIT=$'%F{39}'
+setopt PROMPT_SUBST
+export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} ${COLOR_TDEPTH}(${SHLVL}): '
 
 alias tmux='tmux -2u'
 alias k=kubectl
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # Alias - GIT
+alias gitg="git grep"
 alias gits="git status"
 alias gitac="git add -u; git commit --amend --no-edit"
 alias gitc="git checkout"
 alias gitl="git log --graph --abbrev-commit --format=format:'%C(magenta)%h%C(reset) - %C(cyan)%<(21,trunc)%ci%x08%x08%x08%x08%x08 %C(bold cyan)%>(15,trunc)%cr %C(bold blue)%<(30,trunc)%cn %C(bold yellow)%s %C(bold red)%d%C(reset)'"
 
-
-alias todawn="cd ~/projects/sunshine-dawn"
-alias todusk="cd ~/projects/sunshine3"
+function git_replace() {
+    if [[ "$1" == "-d" ]]; then
+        git grep $2
+    else 
+        git grep -l $1 | xargs sed -i "s/$1/$2/g"
+    fi
+}

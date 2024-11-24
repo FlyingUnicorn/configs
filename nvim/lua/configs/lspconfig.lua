@@ -35,8 +35,19 @@ lspconfig.clangd.setup({
     end,
     on_init = on_init,
     capabilities = capabilities,
+    cmd = {
+         "clangd",
+         "--background-index",
+         "-j=12",
+         "--clang-tidy",
+         "--all-scopes-completion",
+         "--completion-style=detailed",
+         "--header-insertion-decorators",
+         "--header-insertion=iwyu",
+         "--pch-storage=memory",
+    },
     init_options = {
-        fallbackFlags = { "--std=c++20" },
+        fallbackFlags = { "--std=c++23" },
     },
 })
 
@@ -67,7 +78,7 @@ lspconfig.ts_ls.setup({
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
-    filetypes = { "js", "ts", "jsx", "tsx" },
+    filetypes = { "js", "ts", "jsx", "tsx", "vue" },
     init_options = {
         preferences = {
             disableSuggestions = true,

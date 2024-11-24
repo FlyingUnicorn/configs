@@ -5,10 +5,11 @@ local options = {
         cpp = { "clang-format" },
         go = { "gofumpt", "goimports-reviser", "golines" },
         python = { "isort", "black" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
+        javascript = { "prettier", "prettierd" },
+        typescript = { "prettier", "prettierd" },
+        javascriptreact = { "prettier", "prettierd" },
+        typescriptreact = { "prettier", "prettierd" },
+        vue = { "prettier", "prettierd" },
     },
 
     formatters = {

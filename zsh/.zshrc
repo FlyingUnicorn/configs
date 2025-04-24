@@ -143,3 +143,7 @@ function git_replace() {
         git grep -l $1 | xargs sed -i "s/$1/$2/g"
     fi
 }
+
+alias ndc="nix develop --command"
+alias nixc="sudo nvim /etc/nixos/configuration.nix"
+alias nixca="sudo nixos-rebuild switch"

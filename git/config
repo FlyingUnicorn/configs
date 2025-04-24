@@ -1,6 +1,6 @@
 [user]
 	name = Jonas Andersson
-	email = jonas8andersson@gmail.com
+	email = jonas.andersson@esab.se
 [core]
 	editor = nvim
 [alias]
@@ -9,3 +9,5 @@
 	ci = commit
 	co = checkout
 	cian = commit --amend --no-edit
+[commit]
+	template = /nix/store/xh8aviaa4pgxhrymdhlk44vxd1qif375-gitmessage

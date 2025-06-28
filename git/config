@@ -10,4 +10,4 @@
 	co = checkout
 	cian = commit --amend --no-edit
 [commit]
-	template = /nix/store/xh8aviaa4pgxhrymdhlk44vxd1qif375-gitmessage
+	template = ../infra-and-test/.gitmessage

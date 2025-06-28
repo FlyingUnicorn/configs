@@ -1,6 +1,19 @@
 require "nvchad.options"
 
--- add yours here!
+-- Indenting
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+-- disable mouse
+vim.opt.mouse = ""
+
+vim.opt.listchars = {
+    tab = "▸ ",
+    trail = ".",
+    nbsp = "␣",
+}
+
+vim.opt.list = true
+
+vim.opt.relativenumber = true
